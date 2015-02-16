@@ -96,7 +96,7 @@ class LinkSuggest {
 		$preferences['disablelinksuggest'] = array(
 			'type' => 'toggle',
 			'section' => 'editing/advancedediting',
-			'label-message' => 'tog-disablelinksuggest'
+			'label-message' => 'tog-disablelinksuggest2'
 		);
 		return true;
 	}
