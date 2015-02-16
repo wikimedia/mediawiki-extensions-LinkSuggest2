@@ -1,0 +1,3 @@
+[submodule "modules/vendor/Caret.js"]
+	path = modules/vendor/Caret.js
+	url = https://github.com/ichord/Caret.js
