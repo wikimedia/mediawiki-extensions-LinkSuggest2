@@ -26,7 +26,7 @@ $wgExtensionCredits['other'][] = array(
     'url' => 'https://www.mediawiki.org/wiki/Extension:LinkSuggest2', 
     'descriptionmsg' => 'linksuggest-desc',
     'version'  => '0.1',
-    'license-name' => 'GPL'
+    'license-name' => 'GPLv3'
 );
 
 $wgResourceModules['ext.LinkSuggest2'] = array(
