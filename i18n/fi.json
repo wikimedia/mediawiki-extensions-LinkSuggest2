@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Centerlink",
-			"Nedergard"
+			"Nedergard",
+			"Pitke"
 		]
 	},
-	"linksuggest2-desc": "Ehdottaa linkkejä muokkaajille muokkausikkunassa",
+	"linksuggest2-desc": "Ehdottaa linkkejä muokkaajille muokkausnäkymässä",
 	"tog-disablelinksuggest2": "Älä näytä linkkiehdotuksia"
 }
