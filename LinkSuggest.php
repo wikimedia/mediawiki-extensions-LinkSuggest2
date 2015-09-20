@@ -42,7 +42,7 @@ $wgResourceModules['ext.LinkSuggest2'] = array(
 );
 
 // Internationalization file
-$wgMessagesDirs['LinkSuggest'] = __DIR__ . '/i18n';
+$wgMessagesDirs['LinkSuggest2'] = __DIR__ . '/i18n';
 
 // Config variable - whether to load LinkSuggest on edit pages
 $wgEnableEditFormLinkSuggest = true;
