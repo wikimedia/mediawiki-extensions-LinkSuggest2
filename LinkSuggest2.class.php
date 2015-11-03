@@ -18,15 +18,15 @@
  * @file
  */
 
-class LinkSuggest {
+class LinkSuggest2 {
 
 	/**
-	 * @var LinkSuggest $instance
+	 * @var LinkSuggest2 $instance
 	 */
 	private static $instance = null;
 
 	/**
-	 * @var array $selectors: array of jQuery-style selectors which will receive LinkSuggest
+	 * @var array $selectors: array of jQuery-style selectors which will receive LinkSuggest2
 	 */
 	private $selectors = array();
 
@@ -47,7 +47,7 @@ class LinkSuggest {
 
 	public static function singleton() {
 		if ( self::$instance == null ) {
-			self::$instance = new LinkSuggest();
+			self::$instance = new LinkSuggest2();
 		}
 		return self::$instance;
 	}
@@ -87,7 +87,7 @@ class LinkSuggest {
 
 	/**
 	 * Hook: GetPreferences
-	 * Allow the user to enable/disable LinkSuggest
+	 * Allow the user to enable/disable LinkSuggest2
 	 * @param User $user
 	 * @param array $preferences
 	 * @return bool true because it's a hook
@@ -112,7 +112,7 @@ class LinkSuggest {
 		global $wgEnableEditFormLinkSuggest;
 
 		if ( $wgEnableEditFormLinkSuggest ) {
-			LinkSuggest::singleton()->addSelectors( '#wpTextbox1' );
+			LinkSuggest2::singleton()->addSelectors( '#wpTextbox1' );
 		}
 
 		return true;
