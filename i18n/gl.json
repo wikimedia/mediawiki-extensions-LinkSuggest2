@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"linksuggest2-desc": "Suxire ligazóns aos editores no modo de edición",
-	"tog-disablelinksuggest2": "Non mostrar as ligazón suxeridas"
+	"tog-disablelinksuggest2": "Non amosar as ligazón suxeridas"
 }
