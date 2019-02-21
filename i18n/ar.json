@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
-	"linksuggest2-desc": "يقترح روابط للمحررين في عرض التعديل",
+	"linksuggest2-desc": "يقترح وصلات للمحررين في عرض التعديل",
 	"tog-disablelinksuggest2": "لا تظهر اقتراح وصلة"
 }
