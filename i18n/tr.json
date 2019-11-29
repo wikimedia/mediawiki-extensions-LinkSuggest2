@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manco Capac"
+			"Manco Capac",
+			"BaRaN6161 TURK"
 		]
 	},
+	"linksuggest2-desc": "Düzenleme görünümünde editörlere bağlantılar önerir",
 	"tog-disablelinksuggest2": "Bağlantı önermesini gösterme"
 }
