@@ -35,7 +35,7 @@ $wgResourceModules['ext.LinkSuggest2'] = array(
 		'modules/ext.LinkSuggest2.js'
 	),
 	'dependencies' => array(
-		'jquery.ui.autocomplete'
+		'jquery.ui'
 	),
 	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'LinkSuggest2'
