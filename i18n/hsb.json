@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Michawiki"
+			"Michawiki",
+			"J budissin"
 		]
 	},
-	"linksuggest2-desc": "Namjetuje wobdźěłowarjam wotkazy we wobdźěłowanskim woknje",
+	"linksuggest2-desc": "Namjetuje wobdźěłarjam wotkazy we wobdźěłanskim woknje",
 	"tog-disablelinksuggest2": "Žadyn wotkazowy namjet pokazać"
 }
