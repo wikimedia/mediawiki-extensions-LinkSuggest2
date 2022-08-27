@@ -18,6 +18,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 class LinkSuggest2 {
 
 	/**
@@ -36,7 +38,14 @@ class LinkSuggest2 {
 	private $userWantsLinkSuggest = false;
 
 	private function __construct() {
-		$this->userWantsLinkSuggest = !( RequestContext::getMain()->getUser()->getOption( 'disablelinksuggest' ) );
+		$user = RequestContext::getMain()->getUser();
+		if ( method_exists( MediaWikiServices::class, 'getUserOptionsLookup' ) ) {
+			// MediaWiki 1.35+
+			$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+			$this->userWantsLinkSuggest = !$userOptionsLookup->getOption( $user, 'disablelinksuggest' );
+		} else {
+			$this->userWantsLinkSuggest = !$user->getOption( 'disablelinksuggest' );
+		}
 
 		// only register hook if the user has enabled LinkSuggest
 		if ( $this->userWantsLinkSuggest ) {
