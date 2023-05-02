@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sherbrooke"
+			"Sherbrooke",
+			"Verdy p"
 		]
 	},
-	"linksuggest2-desc": "Dans la fenêtre d'édition, suggère des liens aux contributeurs",
+	"linksuggest2-desc": "Suggère des liens aux rédacteurs dans la vue de modification",
 	"tog-disablelinksuggest2": "Ne pas montrer les liens suggérés"
 }
