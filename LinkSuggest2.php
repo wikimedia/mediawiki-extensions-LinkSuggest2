@@ -18,38 +18,16 @@
  * @file
  * @ingroup Extensions
  */
-
-$wgExtensionCredits['other'][] = array(
-    'path' => __FILE__,
-    'name' => 'LinkSuggest2',
-    'author' => 'TK-999',
-    'url' => 'https://www.mediawiki.org/wiki/Extension:LinkSuggest2',
-    'descriptionmsg' => 'linksuggest2-desc',
-    'version'  => '0.1',
-    'license-name' => 'GPL-3.0-only'
-);
-
-$wgResourceModules['ext.LinkSuggest2'] = array(
-	'scripts' => array(
-		'modules/vendor/Caret.js/src/jquery.caret.js',
-		'modules/ext.LinkSuggest2.js'
-	),
-	'dependencies' => array(
-		'jquery.ui'
-	),
-	'localBasePath' => __DIR__,
-	'remoteExtPath' => 'LinkSuggest2'
-);
-
-// Internationalization file
-$wgMessagesDirs['LinkSuggest2'] = __DIR__ . '/i18n';
-
-// Config variable - whether to load LinkSuggest on edit pages
-$wgEnableEditFormLinkSuggest = true;
-
-// Config variable - maximum amount of suggestions to show
-$wgLinkSuggestMaxSuggestions = 3;
-
-$wgAutoloadClasses['LinkSuggest2'] = __DIR__ . '/LinkSuggest2.class.php';
-$wgHooks['GetPreferences'][] = 'LinkSuggest2::onGetPreferences';
-$wgHooks['EditPage::showEditForm:initial'][] = 'LinkSuggest2::onEditPageShowEditFormInitial';
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'LinkSuggest2' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['LinkSuggest2'] = __DIR__ . '/i18n';
+	wfWarn(
+		'Deprecated PHP entry point used for the LinkSuggest2 extension. ' .
+		'Please use wfLoadExtension() instead, ' .
+		'see https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Extension_registration for more details.'
+	);
+	return;
+} else {
+	die( 'This version of the LinkSuggest2 extension requires MediaWiki 1.35+' );
+}

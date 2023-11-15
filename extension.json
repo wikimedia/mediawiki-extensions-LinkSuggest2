@@ -1,0 +1,52 @@
+{
+	"name": "LinkSuggest2",
+	"version": "0.2",
+	"url": "https://www.mediawiki.org/wiki/Extension:LinkSuggest2",
+	"author": "TK-999",
+	"descriptionmsg": "linksuggest2-desc",
+	"license-name": "GPL-3.0-only",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.35.0"
+	},
+	"MessagesDirs": {
+		"LinkSuggest2": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"LinkSuggest2": "src/LinkSuggest2.php"
+	},
+	"ResourceModules": {
+		"ext.LinkSuggest2": {
+			"scripts": [
+				"ext.LinkSuggest2.js",
+				"vendor/Caret.js/src/jquery.caret.js"
+			],
+			"dependencies": [
+				"jquery.ui"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "LinkSuggest2/modules"
+	},
+	"Hooks": {
+		"GetPreferences": "LinkSuggest2::onGetPreferences",
+		"EditPage::showEditForm:initial": "LinkSuggest2::onEditPageShowEditFormInitial"
+	},
+	"config": {
+		"EnableEditFormLinkSuggest": {
+			"description": "Whether to load LinkSuggest on edit pages",
+			"value": true,
+			"public": true
+		},
+		"wgLinkSuggestMaxSuggestions": {
+			"description": "Maximum amount of suggestions to show",
+			"value": 3,
+			"public": true
+		}
+	},
+	"manifest_version": 2
+}
