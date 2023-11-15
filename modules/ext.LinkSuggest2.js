@@ -1,14 +1,15 @@
-( function ( mw, $ ) {
+( function () {
 	$( function () {
 		/**
 		 * Gets title suggestions for the currently opened wikilink
+		 *
 		 * @param {Object} request
 		 * @param {Function} response
 		 */
 		function getSuggestions( request, response ) {
 			var $elem = this,
 				caretPos = $elem.caret( 'pos' ),
-				text = $elem.val().substr( 0, caretPos ),
+				text = $elem.val().slice( 0, Math.max( 0, caretPos ) ),
 				link;
 
 			// store caret location for currect positioning of suggestions
@@ -17,7 +18,7 @@
 			if ( text.lastIndexOf( '[[' ) > text.lastIndexOf( ']]' ) ) {
 				link = text.substr( text.lastIndexOf( '[[' ) + 2, caretPos );
 				// store text before wikilink
-				$elem.data( 'textBefore', text.substr( 0, text.lastIndexOf( '[[' ) + 2 ) );
+				$elem.data( 'textBefore', text.slice( 0, Math.max( 0, text.lastIndexOf( '[[' ) + 2 ) ) );
 				( new mw.Api() ).get( {
 					action: 'opensearch',
 					search: link,
@@ -32,9 +33,10 @@
 
 		/**
 		 * Finish the wikilink with the selected suggestion
+		 *
 		 * @param {Object} event
 		 * @param {Object} ui
-		 * @returns {boolean} false to prevent the contents from being overridden
+		 * @return {boolean} false to prevent the contents from being overridden
 		 */
 		function completeLink( event, ui ) {
 			var $elem = this,
@@ -49,6 +51,7 @@
 
 		/**
 		 * Properly position the suggestions widget
+		 *
 		 * @param {Object} event
 		 * @param {Object} ui
 		 */
@@ -58,9 +61,9 @@
 				elemOffset = $elem.offset();
 
 			$elem.autocomplete( 'widget' ).css( {
-				'top': pos.top + elemOffset.top,
-				'left': pos.left + elemOffset.left,
-				'width': 'auto',
+				top: pos.top + elemOffset.top,
+				left: pos.left + elemOffset.left,
+				width: 'auto',
 				'max-width': 300
 			} );
 		}
@@ -74,4 +77,4 @@
 			} );
 		} );
 	} );
-}( mediaWiki, jQuery ) );
+}() );
