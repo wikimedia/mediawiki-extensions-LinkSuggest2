@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Don Alessandro"
 		]
 	},
 	"linksuggest2-desc": "Мөхәррирләргә сылтамаларны үзгәртү режимында тәкъдим итә",
-	"tog-disablelinksuggest2": "Сылтамаларны күрсәтмәскә"
+	"tog-disablelinksuggest2": "Тәкъдим ителгән сылтамаларны күрсәтелмәсен"
 }
