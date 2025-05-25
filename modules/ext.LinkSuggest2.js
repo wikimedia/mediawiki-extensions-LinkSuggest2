@@ -1,5 +1,5 @@
 ( function () {
-	$( function () {
+	$( () => {
 		/**
 		 * Gets title suggestions for the currently opened wikilink
 		 *
@@ -7,7 +7,7 @@
 		 * @param {Function} response
 		 */
 		function getSuggestions( request, response ) {
-			var $elem = this,
+			let $elem = this,
 				caretPos = $elem.caret( 'pos' ),
 				text = $elem.val().slice( 0, Math.max( 0, caretPos ) ),
 				link;
@@ -24,7 +24,7 @@
 					search: link,
 					namespace: 0,
 					limit: ( mw.config.get( 'wgLinkSuggestMaxSuggestions' ) || 3 )
-				} ).done( function ( data ) {
+				} ).done( ( data ) => {
 					// send the data to jQuery UI autocomplete
 					response( data[ 1 ] );
 				} );
@@ -39,7 +39,7 @@
 		 * @return {boolean} false to prevent the contents from being overridden
 		 */
 		function completeLink( event, ui ) {
-			var $elem = this,
+			const $elem = this,
 				content = $elem.val(),
 				link = ui.item.value,
 				caretPos = $elem.data( 'caretPos' ),
@@ -56,7 +56,7 @@
 		 * @param {Object} ui
 		 */
 		function setSuggestionsPosition( event, ui ) {
-			var $elem = this,
+			const $elem = this,
 				pos = $elem.caret( 'position', $elem.data( 'caretPos' ) ),
 				elemOffset = $elem.offset();
 
@@ -68,8 +68,8 @@
 			} );
 		}
 
-		( mw.config.get( 'wgLinkSuggestElements' ) || [] ).forEach( function ( selector, i ) {
-			var $elem = $( selector );
+		( mw.config.get( 'wgLinkSuggestElements' ) || [] ).forEach( ( selector, i ) => {
+			const $elem = $( selector );
 			$elem.autocomplete( {
 				select: completeLink.bind( $elem ),
 				source: getSuggestions.bind( $elem ),

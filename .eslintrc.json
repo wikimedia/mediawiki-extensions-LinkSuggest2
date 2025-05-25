@@ -1,12 +1,14 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es5",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
 	"rules": {
 		"no-unused-vars": "off",
-		"unicorn/prefer-string-slice": "off"
+		"unicorn/prefer-string-slice": "off",
+		"no-jquery/no-done-fail": "warn",
+		"prefer-const": "warn"
 	}
 }
