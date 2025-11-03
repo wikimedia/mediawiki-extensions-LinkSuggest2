@@ -18,6 +18,7 @@
  * @file
  */
 
+use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 
 class LinkSuggest2 {
