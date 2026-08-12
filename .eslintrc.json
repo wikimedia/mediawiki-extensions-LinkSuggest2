@@ -9,6 +9,7 @@
 		"no-unused-vars": "off",
 		"unicorn/prefer-string-slice": "off",
 		"no-jquery/no-done-fail": "warn",
-		"prefer-const": "warn"
+		"prefer-const": "warn",
+		"no-jquery/no-jquery-ui": "warn"
 	}
 }
