@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"linksuggest2-desc": "Navrhuje redaktorom odkazy pri úprave stránky",
+	"tog-disablelinksuggest2": "Nezobrazovať návrhy odkazov"
+}
